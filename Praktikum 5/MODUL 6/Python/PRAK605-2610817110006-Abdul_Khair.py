@@ -1,0 +1,24 @@
+n = int(input())
+
+A = []
+B = []
+
+input()
+for i in range(n):
+    A.append(list(map(int, input().split())))
+
+input()
+for i in range(n):
+    B.append(list(map(int, input().split())))
+
+C = [[0] * n for i in range(n)]
+
+for i in range(n):
+    for j in range(n):
+        for k in range(n):
+            C[i][j] += A[i][k] * B[k][j]
+
+print("Matriks AXB")
+
+for i in range(n):
+    print(*C[i])

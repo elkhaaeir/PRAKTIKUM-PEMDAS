@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char description[200];
+    int length;
+
+    fgets(description, 200, stdin); 
+
+    description[strcspn(description, "\n")] = '\0';
+
+    length = strlen(description);
+
+    if (length > 20) {
+        for (int i = 0; i < 20; i++) {
+            printf("%c", description[i]);
+        }
+        
+        printf("...");
+    } else {
+        printf("%s\n", description);
+    }
+
+    printf("\n");
+
+    return 0;
+}
